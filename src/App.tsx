@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useCallback, useMemo, useState } from 'react';
 import './App.css';
+import APIClient from './components/APIClient';
+import Button from './components/Button';
+import Loading from './components/Loading';
+import Repositories from './components/Repositories';
+import Title from './components/Title/Title';
+import { Repositoyr } from './models/repository';
 
 function App() {
+  const githubClient = useMemo(() => new APIClient('https://api.github.com'), []);
+  const [repositories, setRepositories] = useState<Repositoyr[]>([]);
+
+  const getRepositories = useCallback(
+    async () => {
+      setRepositories(await githubClient.get('users/ferreiratiago/repos'));
+    },
+    [githubClient],
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title>Query Repositories</Title>
+      <Button onClick={getRepositories}>Get Repos</Button>
+      {
+        repositories.length === 0
+          ? <Loading />
+          : <Repositories list={repositories} />
+      }
+      <Button onClick={getRepositories}>Refresh</Button>
     </div>
   );
 }
