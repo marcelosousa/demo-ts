@@ -1,8 +1,8 @@
 import React from 'react';
-import { Repositoyr } from '../../models/repository';
+import { Repository } from '../../models/repository';
 
 interface RepositoryUrl {
-    content: Repositoyr;
+    content: Repository;
 }
 
 export default React.memo(function RepositoryUrl({ content }: RepositoryUrl) {

@@ -1,9 +1,9 @@
 import React, { useCallback, useState, CSSProperties } from 'react';
-import { Repositoyr } from '../../models/repository';
+import { Repository } from '../../models/repository';
 import RepositoryName from '../RepositoryName';
 import RepositoryUrl from '../RepositoryUrl';
 
-export default React.memo(function RepositoryDetails({ content }: { content: Repositoyr }) {
+export default React.memo(function RepositoryDetails({ content }: { content: Repository }) {
     const [style, setStyle] = useState<CSSProperties>({});
 
     const addHighlight = useCallback(

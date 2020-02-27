@@ -1,9 +1,9 @@
 import React from 'react';
-import { Repositoyr } from '../../models/repository';
+import { Repository } from '../../models/repository';
 import RepositoryDetails from '../RepositoryDetails';
 
 interface RepositoriesList {
-    list: Repositoyr[];
+    list: Repository[];
 }
 
 export default React.memo(function RepositoriesList({ list }: RepositoriesList) {
