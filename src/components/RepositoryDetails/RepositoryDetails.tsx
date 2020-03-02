@@ -23,7 +23,7 @@ export default React.memo(function RepositoryDetails({ content }: { content: Rep
     return (
         <div style={style} onMouseEnter={addHighlight} onMouseLeave={clearHighlight}>
             <p>{content.name}</p>
-            <a href={content.url}>{content.full_name}</a>
+            <a href={content.html_url}>{content.full_name}</a>
         </div>
     );
 });

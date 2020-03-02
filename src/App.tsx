@@ -1,33 +1,33 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './App.css';
-import APIClient from './components/APIClient';
-import Button from './components/Button';
+import GitHubContext from './components/GitHubContext';
 import Loading from './components/Loading';
 import Repositories from './components/Repositories';
 import Title from './components/Title/Title';
 import { Repositoyr } from './models/repository';
 
 function App() {
-  const githubClient = useMemo(() => new APIClient('https://api.github.com'), []);
-  const [repositories, setRepositories] = useState<Repositoyr[]>([]);
+  const githubContext = useContext(GitHubContext);
+  const [repositories, setRepositories] = useState<Repositoyr[] | null>(null);
 
-  const getRepositories = useCallback(
-    async () => {
-      setRepositories(await githubClient.get('users/ferreiratiago/repos'));
+  useEffect(
+    () => {
+      (async () => {
+        const repositories = await githubContext.apiClient.get('users/ferreiratiago/repos');
+        setRepositories(repositories);
+      })();
     },
-    [githubClient],
+    [githubContext],
   );
 
   return (
     <div className="App">
       <Title>Query Repositories</Title>
-      <Button onClick={getRepositories}>Get Repos</Button>
       {
-        repositories.length === 0
+        repositories === null
           ? <Loading />
           : <Repositories list={repositories} />
       }
-      <Button onClick={getRepositories}>Refresh</Button>
     </div>
   );
 }
