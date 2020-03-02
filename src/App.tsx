@@ -8,6 +8,7 @@ import Title from './components/Title/Title';
 import { Repository } from './models/repository';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import RepositoryHighlighted from './components/RepositoryHighlighted';
+import RepositoryMostForks from './components/RepositoryMostForks';
 
 function App() {
   const githubClient = useMemo(() => new APIClient('https://api.github.com'), []);
@@ -31,6 +32,7 @@ function App() {
             <>
               <RepositoryMostStars repo={repositories[0]} />
               <RepositoryHighlighted repo={repositories[0]} />
+              <RepositoryMostForks repo={repositories[0]} />
               <Repositories list={repositories} />
             </>
           )
