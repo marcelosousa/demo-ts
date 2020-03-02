@@ -4,11 +4,11 @@ import APIClient from './components/APIClient';
 import Button from './components/Button';
 import Loading from './components/Loading';
 import Repositories from './components/Repositories';
-import Title from './components/Title/Title';
-import { Repository } from './models/repository';
-import RepositoryMostStars from './components/RepositoryMostStars';
 import RepositoryHighlighted from './components/RepositoryHighlighted';
 import RepositoryMostForks from './components/RepositoryMostForks';
+import RepositoryMostStars from './components/RepositoryMostStars';
+import Title from './components/Title/Title';
+import { Repository } from './models/repository';
 
 function App() {
   const githubClient = useMemo(() => new APIClient('https://api.github.com'), []);
@@ -16,7 +16,15 @@ function App() {
 
   const getRepositories = useCallback(
     async () => {
-      setRepositories(await githubClient.get('users/ferreiratiago/repos'));
+      const repositories = await githubClient.get('users/ferreiratiago/repos');
+      const mappedRepositories = repositories.map((repository: any) => ({
+        id: repository.id,
+        name: repository.name,
+        full_name: repository.full_name,
+        html_url: repository.html_url,
+        api_url: repository.url,
+      })) as Repository[];
+      setRepositories(mappedRepositories);
     },
     [githubClient],
   );
