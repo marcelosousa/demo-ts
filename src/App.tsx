@@ -5,11 +5,11 @@ import Button from './components/Button';
 import Loading from './components/Loading';
 import Repositories from './components/Repositories';
 import Title from './components/Title/Title';
-import { Repositoyr } from './models/repository';
+import { Repository } from './models/repository';
 
 function App() {
   const githubClient = useMemo(() => new APIClient('https://api.github.com'), []);
-  const [repositories, setRepositories] = useState<Repositoyr[]>([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   const getRepositories = useCallback(
     async () => {
