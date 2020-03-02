@@ -1,6 +1,7 @@
 import React from 'react';
 import { Repository } from '../../models/repository';
 import RepositoryDetails from '../RepositoryDetails';
+import RepositoryTitle from '../RepositoryTitle';
 import Title from '../Title';
 
 interface Repositories {
@@ -10,12 +11,15 @@ interface Repositories {
 export default React.memo(function Repositories({ list }: Repositories) {
     return (
         <>
-            <Title>Repositories</Title>
+            <Title>All Repositories</Title>
             <div>
                 {
                     list.map(repository => {
                         return (
-                            <RepositoryDetails content={repository} />
+                            <>
+                                <RepositoryTitle repo={repository} />
+                                <RepositoryDetails repo={repository} />
+                            </>
                         )
                     })
                 }

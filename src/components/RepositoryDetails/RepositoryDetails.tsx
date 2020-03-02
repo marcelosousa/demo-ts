@@ -1,7 +1,11 @@
 import React, { CSSProperties, useCallback, useState } from 'react';
 import { Repository } from '../../models/repository';
 
-export default React.memo(function RepositoryDetails({ content }: { content: Repository }) {
+interface RepositoryDetails {
+    repo: Repository;
+}
+
+export default React.memo(function RepositoryDetails({ repo }: RepositoryDetails) {
     const [style, setStyle] = useState<CSSProperties>({});
 
     const addHighlight = useCallback(
@@ -22,8 +26,8 @@ export default React.memo(function RepositoryDetails({ content }: { content: Rep
 
     return (
         <div style={style} onMouseEnter={addHighlight} onMouseLeave={clearHighlight}>
-            <p>{content.name}</p>
-            <a href={content.url}>{content.full_name}</a>
+            <p>Name: {repo.full_name}</p>
+            <a href={repo.url}>More info</a>
         </div>
     );
 });
