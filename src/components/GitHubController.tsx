@@ -6,7 +6,7 @@ import Loading from './Loading';
 
 export default function GitHubController({ children }: { children: ReactNode }) {
     const gitHubClient = useMemo(() => new APIClient('https://api.github.com'), []);
-    const [allRepos, setAllRepos] = useState<Repository[]>();
+    const [allRepos, setAllRepos] = useState<Repository[]>([]);
     const [repoWithMostForks, setRepoWithMostForks] = useState<Repository>();
     const [repoWithMostStars, setRepoWithMostStars] = useState<Repository>();
     const [repoHighlighted, setRepoHighlighted] = useState<Repository>();
@@ -24,15 +24,17 @@ export default function GitHubController({ children }: { children: ReactNode }) 
     );
 
     const value = {
-        allRepos: allRepos!,
-        repoWithMostForks: repoWithMostForks!,
-        repoWithMostStars: repoWithMostStars!,
-        repoHighlighted: repoHighlighted!,
-        setRepoHighlighted,
+        repos: {
+            all: allRepos,
+            withMostForks: repoWithMostForks,
+            withMostStars: repoWithMostStars,
+            highlighted: repoHighlighted,
+            setHighlighted: setRepoHighlighted,
+        }
     }
 
     return (
-        allRepos === undefined
+        allRepos.length === 0
             ? <Loading />
             : <GitHubContext.Provider value={value}>{children}</GitHubContext.Provider>
     );

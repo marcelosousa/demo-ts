@@ -4,8 +4,12 @@ import RepositoryAPIDetails from '../RepositoryAPIDetails';
 import Title from '../Title';
 
 export default React.memo(function RepositoryMostStars() {
-    const gitHubContext = useContext(GitHubContext);
-    const repo = gitHubContext.repoWithMostStars;
+    const { repos } = useContext(GitHubContext);
+    const repo = repos.withMostStars;
+
+    if (repo === undefined) {
+        return null;
+    }
 
     return (
         <>

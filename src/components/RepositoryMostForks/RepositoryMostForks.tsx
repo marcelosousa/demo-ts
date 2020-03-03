@@ -4,8 +4,12 @@ import RepositoryAPIDetails from '../RepositoryAPIDetails';
 import Title from '../Title';
 
 export default React.memo(function RepositoryMostForks() {
-    const gitHubContext = useContext(GitHubContext);
-    const repo = gitHubContext.repoWithMostForks;
+    const { repos } = useContext(GitHubContext);
+    const repo = repos.withMostForks;
+
+    if (repo === undefined) {
+        return null;
+    }
 
     return (
         <>

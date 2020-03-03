@@ -3,25 +3,25 @@ import { Repository } from '../../models/repository';
 import GitHubContext from '../GitHubContext';
 
 export default React.memo(function RepositoryDetails({ repo }: { repo: Repository }) {
-    const gitHubContext = useContext(GitHubContext);
+    const { repos } = useContext(GitHubContext);
     const [style, setStyle] = useState<CSSProperties>({});
 
     const addHighlight = useCallback(
         () => {
-            gitHubContext.setRepoHighlighted(repo);
+            repos.setHighlighted(repo);
             setStyle({
                 backgroundColor: 'yellow',
             });
         },
-        [repo, gitHubContext],
+        [repo, repos],
     );
 
     const clearHighlight = useCallback(
         () => {
-            gitHubContext.setRepoHighlighted(undefined);
+            repos.setHighlighted(undefined);
             setStyle({});
         },
-        [gitHubContext],
+        [repos],
     );
 
     return (

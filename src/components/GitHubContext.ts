@@ -1,12 +1,16 @@
 import React from 'react';
 import { Repository } from '../models/repository';
 
+interface RepoContext {
+    all: Repository[];
+    withMostForks?: Repository;
+    withMostStars?: Repository;
+    highlighted?: Repository;
+    setHighlighted: (repo: Repository | undefined) => void;
+}
+
 interface GitHubContext {
-    allRepos: Repository[];
-    repoWithMostForks: Repository;
-    repoWithMostStars: Repository;
-    repoHighlighted: Repository;
-    setRepoHighlighted: (repo: Repository | undefined) => void;
+    repos: RepoContext
 }
 
 export default React.createContext<GitHubContext>(null as unknown as GitHubContext);

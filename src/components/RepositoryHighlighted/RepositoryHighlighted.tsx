@@ -3,15 +3,26 @@ import GitHubContext from '../GitHubContext';
 import Title from '../Title';
 
 export default React.memo(function RepositoryHighlighted() {
-    const gitHubContext = useContext(GitHubContext);
-    const repo = gitHubContext.repoHighlighted
+    const { repos } = useContext(GitHubContext);
+    const repo = repos.highlighted
+
+    if (repo === undefined) {
+        return (
+            <>
+                <Title>Highligted</Title>
+                <p>Name: -</p>
+                <p>Full name: -</p>
+                <p>-</p>
+            </>
+        )
+    }
 
     return (
         <>
             <Title>Highligted</Title>
-            <p>Name: {repo && repo.name}</p>
-            <p>Full name: {repo && repo.full_name}</p>
-            <p><a href={repo && repo.url}>More info</a></p>
+            <p>Name: {repo.name}</p>
+            <p>Full name: {repo.full_name}</p>
+            <p><a href={repo.url}>More info</a></p>
         </>
-    );
+    )
 });

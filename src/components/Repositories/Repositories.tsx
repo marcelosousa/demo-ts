@@ -5,14 +5,14 @@ import RepositoryTitle from '../RepositoryTitle';
 import Title from '../Title';
 
 export default React.memo(function Repositories() {
-    const gitHubContext = useContext(GitHubContext);
+    const { repos } = useContext(GitHubContext);
 
     return (
         <>
             <Title>All Repositories</Title>
             <div>
                 {
-                    gitHubContext.allRepos.map(repository => {
+                    repos.all.map(repository => {
                         return (
                             <>
                                 <RepositoryTitle repo={repository} />
