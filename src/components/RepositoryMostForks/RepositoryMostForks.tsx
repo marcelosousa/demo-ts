@@ -1,13 +1,12 @@
-import React from 'react';
-import { Repository } from '../../models/repository';
+import React, { useContext } from 'react';
+import GitHubContext from '../GitHubContext';
 import RepositoryAPIDetails from '../RepositoryAPIDetails';
 import Title from '../Title';
 
-interface RepositoryMostForks {
-    repo: Repository;
-}
+export default React.memo(function RepositoryMostForks() {
+    const gitHubContext = useContext(GitHubContext);
+    const repo = gitHubContext.repoWithMostForks;
 
-export default React.memo(function RepositoryMostForks({ repo }: RepositoryMostForks) {
     return (
         <>
             <Title>Repository with most forks</Title>

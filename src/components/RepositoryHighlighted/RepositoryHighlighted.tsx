@@ -1,20 +1,17 @@
-import React from 'react';
-import { Repository } from '../../models/repository';
-import RepositoryAPIDetails from '../RepositoryAPIDetails';
+import React, { useContext } from 'react';
+import GitHubContext from '../GitHubContext';
 import Title from '../Title';
 
-interface RepositoryHighlighted {
-    repo: Repository;
-}
+export default React.memo(function RepositoryHighlighted() {
+    const gitHubContext = useContext(GitHubContext);
+    const repo = gitHubContext.repoHighlighted
 
-export default React.memo(function RepositoryHighlighted({ repo }: RepositoryHighlighted) {
     return (
         <>
             <Title>Highligted</Title>
-            <p>Name: {repo.name}</p>
-            <p>Full name: {repo.full_name}</p>
-            <RepositoryAPIDetails name={repo.name} url={repo.url} />
-            <p><a href={repo.url}>More info</a></p>
+            <p>Name: {repo && repo.name}</p>
+            <p>Full name: {repo && repo.full_name}</p>
+            <p><a href={repo && repo.url}>More info</a></p>
         </>
     );
 });

@@ -1,13 +1,12 @@
-import React from 'react';
-import { Repository } from '../../models/repository';
+import React, { useContext } from 'react';
+import GitHubContext from '../GitHubContext';
 import RepositoryAPIDetails from '../RepositoryAPIDetails';
 import Title from '../Title';
 
-interface RepositoryMostStars {
-    repo: Repository;
-}
+export default React.memo(function RepositoryMostStars() {
+    const gitHubContext = useContext(GitHubContext);
+    const repo = gitHubContext.repoWithMostStars;
 
-export default React.memo(function RepositoryMostStars({ repo }: RepositoryMostStars) {
     return (
         <>
             <Title>Repository with most stars</Title>
