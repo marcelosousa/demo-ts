@@ -1,8 +1,11 @@
 import React, { CSSProperties, useCallback, useContext, useState } from 'react';
-import { Repository } from '../../models/repository';
+import * as repos from '../../models/repository';
+import { Repository2 } from '../../models/repository2';
 import GitHubContext from '../GitHubContext';
 
-export default React.memo(function RepositoryDetails({ repo }: { repo: Repository }) {
+export var myRepo: Repository2
+
+export default React.memo(function RepositoryDetails({ repo }: { repo: repos.Repository }) {
     const gitHubContext = useContext(GitHubContext);
     const [style, setStyle] = useState<CSSProperties>({});
 
