@@ -6,8 +6,11 @@ import RepositoryHighlighted from './components/RepositoryHighlighted';
 import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
+import { API_BASE_PATH } from './consts';
 
 function App() {
+  console.log(`Base path: ${API_BASE_PATH}`);
+
   return (
     <div className="App">
       <GitHubController>
