@@ -11,9 +11,10 @@ export const MY_LIST = [
     "C"
 ];
 
-export const MY_INT = 0;
+export var MY_INT = 0;
 
 export function myInit(): number {
+    MY_INT++;
     return MY_INT;
 }
 
