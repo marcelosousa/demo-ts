@@ -11,10 +11,10 @@ export const MY_LIST = [
     "C"
 ];
 
-export var MY_INT = 0;
+export const MY_INT = 0;
 
 export function myInit(): number {
-    return 0;
+    return MY_INT;
 }
 
 export function myIncrement(value: number): number {
