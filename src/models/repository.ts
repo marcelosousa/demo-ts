@@ -4,3 +4,9 @@ export interface Repository {
     full_name: string;
     url: string;
 }
+
+export var MY_REPO: Repository
+
+export function myFunction(): string {
+    return "myFunction";
+}
