@@ -7,9 +7,11 @@ import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 import * as repos from './models/repository';
+import { MY_REPO, myFunction } from './models/repository';
 
 function App() {
   console.log(`TEMPLATE: ${repos.MY_REPO}=${repos.myFunction()}`);
+  console.log(`TEMPLATE2: ${MY_REPO}=${myFunction()}`);
   return (
     <div className="App">
       <GitHubController>
