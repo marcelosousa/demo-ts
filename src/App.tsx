@@ -23,6 +23,7 @@ function testForInLoop() {
 function testForEachLoop() {
   for (let value = repos.myInit(); repos.myCondition(value); value = repos.myIncrement(value)) {
     repos.myConsumerInt(value);
+    console.log(repos.MY_INT);
   }
 }
 
