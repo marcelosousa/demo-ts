@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.css';
-import { callAsync, MY_ARRAY } from '../../models/consts';
+import * as cst from '../../models/consts';
 
 interface Button {
     children: string;
@@ -10,10 +10,10 @@ interface Button {
 async function callCallAsync() {
     const list = [
         "A",
-        ...MY_ARRAY
+        ...cst.MY_ARRAY
     ];
 
-    await callAsync.call(() => list);
+    await cst.callAsync.call(() => list);
 }
 
 export default React.memo(function Button({ children, onClick }: Button) {
