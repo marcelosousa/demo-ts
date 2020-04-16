@@ -17,6 +17,8 @@ class RepositoryTitleImpl implements RepositoryTitle {
 export default React.memo(function RepositoryTitle({ repo }: RepositoryTitle) {
     const local: RepositoryTitleImpl = new RepositoryTitleImpl();
 
+    const local2: RepositoryTitleImpl = new RepositoryTitleImpl();
+
     return (
         <>
             <a href={repo.url}><h3>{repo.name}</h3></a>
