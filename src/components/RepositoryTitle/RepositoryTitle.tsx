@@ -6,18 +6,21 @@ interface RepositoryTitle {
 }
 
 class RepositoryTitleImpl implements RepositoryTitle {
+    id: number;
     repo: Repository = {
-        id: 1,
+        id: this.id,
         name: "name",
         full_name: "full name",
         url: "url",
-    };
+    };    
+
+    constructor (id: number) {
+        this.id = id;
+    }
 }
 
 export default React.memo(function RepositoryTitle({ repo }: RepositoryTitle) {
-    const local: RepositoryTitleImpl = new RepositoryTitleImpl();
-
-    const local2: RepositoryTitleImpl = new RepositoryTitleImpl();
+    const local: RepositoryTitleImpl = new RepositoryTitleImpl(1);
 
     return (
         <>
