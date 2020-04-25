@@ -8,6 +8,7 @@ import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 import { repos } from './models';
 import { repos2 } from './models2';
+import { Repository as Repository2 } from './models/repository';
 
 function App() {
   const v: repos.Repository = {
@@ -17,8 +18,11 @@ function App() {
     url: "url",
   };
   const v2: repos2.Repository = v;
+  const v3: Repository2 = v2;
+
   console.log(v);
   console.log(v2);
+  console.log(v3);
 
   return (
     <div className="App">
