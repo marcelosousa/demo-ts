@@ -7,6 +7,7 @@ import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 import { repos } from './models';
+import { repos2 } from './models2';
 
 function App() {
   const v: repos.Repository = {
@@ -15,8 +16,9 @@ function App() {
     full_name: "full name",
     url: "url",
   };
-
+  const v2: repos2.Repository = v;
   console.log(v);
+  console.log(v2);
 
   return (
     <div className="App">
