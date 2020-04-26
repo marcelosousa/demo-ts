@@ -1,5 +1,6 @@
 import * as repos3 from './models3';
 import { repos4, V4 } from './models4';
+import Models4 from './models4';
 
 function myApp() {
     var v1: repos3.repos.Repository = {
@@ -35,4 +36,5 @@ function myApp() {
     console.log(v3);
     console.log(v4);
     console.log(vv4);
+    console.log(Models4);
 }
