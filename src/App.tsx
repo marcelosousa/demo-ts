@@ -6,6 +6,16 @@ import RepositoryHighlighted from './components/RepositoryHighlighted';
 import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
+import NS from './models/ns';
+
+function test() {
+    const a: NS.I1 = {
+        id: "id"
+    };
+    const b: NS.I2 = {
+        name: "b"
+    };
+}
 
 function App() {
   return (
