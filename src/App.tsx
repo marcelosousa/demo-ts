@@ -9,8 +9,8 @@ import Title from './components/Title/Title';
 import { fn } from './models/overload';
 
 function App() {
-  console.log(fn(1));
-  console.log(fn('abc'));
+  console.log(1 + fn(1));
+  console.log('1-' + fn('abc'));
 
   return (
     <div className="App">
