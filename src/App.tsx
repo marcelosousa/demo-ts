@@ -7,6 +7,7 @@ import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 import NS from './models/ns';
+import { fn } from './models/overload';
 
 function test() {
     const a: NS.I1 = {
@@ -18,6 +19,9 @@ function test() {
 }
 
 function App() {
+  console.log(fn(1));
+  console.log(fn('abc'));
+
   return (
     <div className="App">
       <GitHubController>
