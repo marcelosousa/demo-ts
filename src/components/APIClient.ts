@@ -1,6 +1,7 @@
 type Headers = Record<string, string>;
 
 export default class APIClient {
+    unUnusedField: string;
     baseUrl: string;
     baseHeaders: Headers;
 
