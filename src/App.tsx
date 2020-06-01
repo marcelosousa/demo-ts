@@ -11,9 +11,9 @@ function print() {
   console.log('Hello world!');
 }
 
-function App() {
-  print();
+print();
 
+function App() {
   return (
     <div className="App">
       <GitHubController>
