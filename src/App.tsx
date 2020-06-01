@@ -7,7 +7,11 @@ import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 
+function print() {
+  console.log('Hello world!');
+}
 
+print();
 
 
 
