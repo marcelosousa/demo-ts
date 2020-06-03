@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import { buildRepoAuthor, buildRepoTitle } from '../../utils';
 import GitHubContext from '../GitHubContext';
 import RepositoryDetails from '../RepositoryDetails';
-import RepositoryTitle from '../RepositoryTitle';
 import Title from '../Title';
 
 export default React.memo(function Repositories() {
@@ -15,7 +15,8 @@ export default React.memo(function Repositories() {
                     gitHubContext.allRepos.map(repository => {
                         return (
                             <>
-                                <RepositoryTitle repo={repository} />
+                                <>{buildRepoTitle(repository.info)}</>
+                                <>{buildRepoAuthor(repository.info)}</>
                                 <RepositoryDetails repo={repository} />
                             </>
                         )
