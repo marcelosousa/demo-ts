@@ -10,12 +10,12 @@ export default React.memo(function RepositoryMostStars() {
     return (
         <>
             <Title>Repository with most stars</Title>
-            <a href={repo.uri}>{repo.name}</a>
+            <a href={repo.url}>{repo.name}</a>
             <div>
                 <h3>Details</h3>
                 <p>Name: {repo.name}</p>
                 <p>Full name: {repo.full_name}</p>
-                <RepositoryAPIDetails name={repo.name} url={repo.uri} />
+                <RepositoryAPIDetails name={repo.name} url={repo.url} />
             </div>
         </>
     );
