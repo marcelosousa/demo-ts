@@ -10,7 +10,7 @@ export default React.memo(function RepositoryHighlighted() {
         <>
             <Title>Highligted</Title>
             <p>Name: {repo && repo.name}</p>
-            <p>Full name: {repo && repo.full_name}</p>
+            <p>Full name: {repo && repo.full_names}</p>
             <p><a href={repo && repo.url}>More info</a></p>
         </>
     );
