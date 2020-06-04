@@ -27,7 +27,7 @@ export default React.memo(function RepositoryDetails({ repo }: { repo: Repositor
     return (
         <div style={style} onMouseEnter={addHighlight} onMouseLeave={clearHighlight}>
             <p>Name: {repo.full_name}</p>
-            <a href={repo.url}>More info</a>
+            <a href={repo.uri}>More info</a>
         </div>
     );
 });

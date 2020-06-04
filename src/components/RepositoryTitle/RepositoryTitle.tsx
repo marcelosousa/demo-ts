@@ -8,7 +8,7 @@ interface RepositoryTitle {
 export default React.memo(function RepositoryTitle({ repo }: RepositoryTitle) {
     return (
         <>
-            <a href={repo.url}><h3>{repo.name}</h3></a>
+            <a href={repo.uri}><h3>{repo.name}</h3></a>
         </>
     );
 });
