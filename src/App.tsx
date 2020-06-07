@@ -23,6 +23,7 @@ function App() {
     i11: 11,
     i12: 12,
     i13: 13,
+    n: 1000,
     i14: 14,
     i15: 15,
     i16: 16,
@@ -34,6 +35,7 @@ function App() {
   console.log(v);
   if (v !== undefined) {
     console.log(v.i12);
+    console.log(v.n);
   }
 
   return (

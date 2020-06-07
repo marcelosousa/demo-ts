@@ -19,4 +19,5 @@ export interface Large{
     i18: Number;
     i19: Number;
     i20: Number;
+    n: Number;
 }
