@@ -9,8 +9,32 @@ import Title from './components/Title/Title';
 import { Large } from './models/large';
 
 function App() {
-  const v: Large | undefined = undefined;
+  const v: Large = {
+    i1: 1,
+    i2: 2,
+    i3: 3,
+    i4: 4,
+    i5: 5,
+    i6: 6,
+    i7: 7,
+    i8: 8,
+    i9: 9,
+    i10: 10,
+    i11: 11,
+    i12: 12,
+    i13: 13,
+    i14: 14,
+    i15: 15,
+    i16: 16,
+    i17: 17,
+    i18: 18,
+    i19: 19,
+    i20: 20
+  };
   console.log(v);
+  if (v !== undefined) {
+    console.log(v.i12);
+  }
 
   return (
     <div className="App">
