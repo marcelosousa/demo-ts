@@ -6,8 +6,12 @@ import RepositoryHighlighted from './components/RepositoryHighlighted';
 import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
+import { Large } from './models/large';
 
 function App() {
+  const v: Large | undefined = undefined;
+  console.log(v);
+
   return (
     <div className="App">
       <GitHubController>
