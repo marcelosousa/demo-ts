@@ -1,7 +1,7 @@
 import React from 'react';
 import { Repository } from '../../models/repository';
 
-interface RepositoryTitle {
+export interface RepositoryTitle {
     repo: Repository;
 }
 
