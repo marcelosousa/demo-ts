@@ -14,7 +14,7 @@ function App() {
       id: 1,
       full_name: "full name",
       name: "name",
-      url: "",
+      url: "123",
     }
   };
 
