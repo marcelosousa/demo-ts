@@ -6,6 +6,7 @@ import RepositoryHighlighted from './components/RepositoryHighlighted';
 import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
+import UserInfo from './components/UserInfo';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Title>Query Repositories</Title>
         {
           <>
+            <UserInfo />
             <RepositoryMostStars />
             <RepositoryHighlighted />
             <RepositoryMostForks />
