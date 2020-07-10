@@ -8,6 +8,7 @@ import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 
 function App() {
+
   return (
     <div className="App">
       <GitHubController>

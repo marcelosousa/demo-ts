@@ -6,6 +6,7 @@ interface RepositoryAPIDetails {
 }
 
 export default React.memo(function RepositoryAPIDetails({ name, url }: RepositoryAPIDetails) {
+
     return (
         <>
             <h4>Repository API Details</h4>

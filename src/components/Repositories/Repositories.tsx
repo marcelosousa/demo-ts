@@ -6,7 +6,6 @@ import Title from '../Title';
 
 export default React.memo(function Repositories() {
     const gitHubContext = useContext(GitHubContext);
-
     return (
         <>
             <Title>All Repositories</Title>

@@ -3,6 +3,8 @@ import { Repository } from '../../models/repository';
 import GitHubContext from '../GitHubContext';
 
 export default React.memo(function RepositoryDetails({ repo }: { repo: Repository }) {
+
+
     const gitHubContext = useContext(GitHubContext);
     const [style, setStyle] = useState<CSSProperties>({});
 
