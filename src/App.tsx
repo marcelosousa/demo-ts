@@ -7,7 +7,19 @@ import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 
+var MY_S = 'my string';
+
+function fn(a: number, b: string) {
+
+}
+
 function App() {
+  let i = 0;
+  const a = 1;
+  i++;
+
+  fn(a, MY_S);
+
   return (
     <div className="App">
       <GitHubController>
