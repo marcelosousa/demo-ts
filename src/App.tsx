@@ -15,8 +15,8 @@ function fn(a: number, b: string) {
 }
 
 function App() {
-  const a = 0;
-  fn(a, MY_S);
+  const b = 0;
+  fn(b, MY_S);
 
   return (
     <div className="App">
