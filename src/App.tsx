@@ -8,20 +8,15 @@ import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
 import { Repository } from './models/repository';
 
-function fn(a: number, b: Repository) {
+var MY_S = 'my string';
+
+function fn(a: number, b: string) {
 
 }
 
 function App() {
   const a = 0;
-  const repo: Repository = {
-    id: 1,
-    full_name: 'full name',
-    name: 'name',
-    url: 'url',
-  };
-
-  fn(a, repo);
+  fn(a, MY_S);
 
   return (
     <div className="App">
