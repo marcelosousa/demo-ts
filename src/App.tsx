@@ -15,10 +15,10 @@ function fn(a: number, b: string) {
 
 function App() {
   let i = 0;
-  const a = 1;
+  const b = 1;
   i++;
 
-  fn(a, MY_S);
+  fn(b, MY_S);
 
   return (
     <div className="App">
