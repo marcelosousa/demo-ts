@@ -15,7 +15,9 @@ function fn(a: number, b: string) {
 }
 
 function App() {
-  const a = 0;
+  let a = 0;
+  a++;
+
   fn(a, MY_S);
 
   return (
