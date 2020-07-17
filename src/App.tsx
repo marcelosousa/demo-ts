@@ -6,8 +6,23 @@ import RepositoryHighlighted from './components/RepositoryHighlighted';
 import RepositoryMostForks from './components/RepositoryMostForks';
 import RepositoryMostStars from './components/RepositoryMostStars';
 import Title from './components/Title/Title';
+import { Repository } from './models/repository';
+
+function fn(a: number, b: Repository) {
+
+}
 
 function App() {
+  const a = 0;
+  const repo: Repository = {
+    id: 1,
+    full_name: 'full name',
+    name: 'name',
+    url: 'url',
+  };
+
+  fn(a, repo);
+
   return (
     <div className="App">
       <GitHubController>
