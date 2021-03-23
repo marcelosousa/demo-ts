@@ -7,11 +7,11 @@ interface Repositories {
     list: Repository[];
 }
 
-export default React.memo(function Repositories({ list }: Repositories) {
+export default React.memo(function Repositories({ l }: Repositories) {
     return (
         <>
             <Title>Repositories</Title>
-            <RepositoriesList list={list} />
+            <RepositoriesList list={l} />
         </>
     );
 });
